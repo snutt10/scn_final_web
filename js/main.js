@@ -31,14 +31,21 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
-    // const quoteText = document.getElementByID('quote-text');
-    // const quoteTags = document.getElementById('quoute-tags');
-    // const quoteAuthor = document.getElementById('quote-author');
+    const quote = document.querySelector(".quote");
 
-    fetch('https://dummyjson.com/quotes')
+    let div = document.createElement("div");
+    quote.innerHTML = `Loading new quotes...`;
+    fetch('https://api.api-ninjas.com/v1/quotes', {
+        headers:{"X-Api-Key":"5DaMvi47ahESE78K/JuqkQ==xiygyPD77zxsGy8J"}
+    })
         .then(response => response.json())
         .then(data => {
-            console.log(`${data.quote}, -${data.author}`);
+            console.log(data);
+
+            quote.innerHTML = " ";
+            div.innerHTML += data[0].quote;
+            div.innerHTML += `<div class="author"><span>-</span>${data[0].author}`
+            quote.append(div);
         })
 
     var image = document.getElementById("aaa");

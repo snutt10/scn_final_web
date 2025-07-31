@@ -184,9 +184,15 @@ details summary{
     font-weight: bold;
 }
 
-h2, h3 {
+h2 {
     color: var(--color-accent);
     margin-bottom: 1rem;
+}
+
+h3 {
+    color: rgb(63, 41, 4);
+    margin-bottom: 1rem;
+    font-size: small;
 }
 
 /* ========== Responsive Design ========== */
@@ -217,4 +223,17 @@ h2, h3 {
 
 tr:nth-child(even){
     background-color: rgba(72, 70, 142, 0.616);
+}
+
+.quote div{
+    padding: 1 rem;
+    font-size: 20px;
+}
+
+.quote .fa-quote-left,
+.quote .fa-quote-right{
+    font-size: 10px;
+    position: relative;
+    top: -8px;
+    color: black;
 }
