@@ -1,0 +1,220 @@
+/* ========== CSS Variables ========== */
+:root {
+    --bg-primary: rgb(230,142,50);
+    --bg-secondary: rgb(247,181,113);
+    --text-primary: rgb(250,205,159);
+    --color-primary: rgb(251,229,207);
+    --color-accent: rgb(254,242,230);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --nav-text-color: rgb(0, 81, 255);
+}
+
+/* Dark theme variables */
+body.dark-theme {
+    --bg-primary: rgb(211,165,122);
+    --bg-secondary: rgb(123,22,4);
+    --text-primary: rgb(55,33,22);
+    --color-primary: rgb(241,204,174);
+    --color-accent: rgb(109,64,41);
+    --text-color: pink;
+    --nav-text-color: rgb(234, 223, 234);
+}
+
+/* ========== Reset & Base ============ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-accent);
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* ========== Container ========== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========= Header ===========*/
+header{
+    text-align: center;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Dark Mode Button */
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 18, 10, 0.292);
+    border: none;
+    color: rgb(8, 22, 176);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #073c286d;
+}
+
+/* Dark theme header */
+body.dark-theme header {
+    background-color: var(--text-primary);
+    color: var(--text-color);
+}
+
+/* ========== Navigation ========== */
+nav {
+    background-color: var(--bg-secondary);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 1rem 0 2rem 0;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ba119b;
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+#about{
+    background-color: var(--bg-primary);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 5px solid rgb(97, 52, 7);
+    border-radius: 5px;
+}
+
+.about-text p{
+    margin-bottom: 1rem;
+    color: var(--bg-secondary);
+}
+
+aside.interests {
+    background-color:rgb(121, 175, 233);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-left: 4px solid #11ba79;
+    border-radius: 4px;
+}
+
+aside.interests ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside.interests li{
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+details{
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: rgb(121, 175, 233);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+details summary{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+h2, h3 {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .theme-toggle {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+    .theme-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+tr:nth-child(even){
+    background-color: rgba(72, 70, 142, 0.616);
+}
